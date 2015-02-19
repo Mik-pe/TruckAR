@@ -1,12 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="masterthesis.truckar"
-    android:installLocation="preferExternal"
-    android:versionCode="6010"
-    android:versionName="6.0.1" >
-
-    <uses-sdk
-        android:minSdkVersion="10"
-        android:targetSdkVersion="19" />
+    android:installLocation="preferExternal">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -42,13 +36,13 @@
     <!-- Only required by tracking types such as SLAM, GPSCompass etc.. -->
     <uses-feature
         android:name="android.hardware.sensor.accelerometer"
-        android:required="false" />
+        android:required="true" />
     <uses-feature
         android:name="android.hardware.sensor.compass"
-        android:required="false" />
+        android:required="true" />
     <uses-feature
         android:name="android.hardware.sensor.gyroscope"
-        android:required="false" />
+        android:required="true" />
 
     <application
         android:hardwareAccelerated="true"
