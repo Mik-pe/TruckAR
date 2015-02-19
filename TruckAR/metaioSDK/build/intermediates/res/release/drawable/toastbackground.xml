@@ -11,4 +11,4 @@
 		android:right="20dip" 
 		android:bottom="2dip" />
 	<corners android:radius="5dip" />
-</shape><!-- From: file:/C:/Users/Mike/Documents/metaio/Metaio%20SDK%206.0.1/_Android/metaioSDK/res/drawable/toastbackground.xml -->
+</shape><!-- From: file:/C:/Users/Mike/OneDrive/Exjobb/TruckAR/TruckAR/metaioSDK/res/drawable/toastbackground.xml -->

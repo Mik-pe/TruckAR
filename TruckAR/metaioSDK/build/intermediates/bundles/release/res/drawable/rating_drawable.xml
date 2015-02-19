@@ -6,4 +6,4 @@
           android:drawable="@drawable/star_dis" />
     <item android:id="@+android:id/progress"
           android:drawable="@drawable/star_act" />
-</layer-list><!-- From: file:/C:/Users/Mike/Documents/metaio/Metaio%20SDK%206.0.1/_Android/metaioSDK/res/drawable/rating_drawable.xml -->
+</layer-list><!-- From: file:/C:/Users/Mike/OneDrive/Exjobb/TruckAR/TruckAR/metaioSDK/res/drawable/rating_drawable.xml -->

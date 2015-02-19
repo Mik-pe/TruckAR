@@ -9,4 +9,4 @@
         android:layout_height="match_parent"
         class="com.metaio.cloud.plugin.view.POIDetailFragment"
         tools:layout="@layout/poidetaildialog" />
-</FrameLayout><!-- From: file:/C:/Users/Mike/Documents/metaio/Metaio%20SDK%206.0.1/_Android/metaioSDK/res/layout/poiactivity.xml -->
+</FrameLayout><!-- From: file:/C:/Users/Mike/OneDrive/Exjobb/TruckAR/TruckAR/metaioSDK/res/layout/poiactivity.xml -->

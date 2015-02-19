@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/Mike/Documents/metaio/Metaio%20SDK%206.0.1/_Android/metaioSDK/res/values/flags.xml -->
+    <!-- From: file:/C:/Users/Mike/OneDrive/Exjobb/TruckAR/TruckAR/metaioSDK/res/values/flags.xml -->
     <eat-comment/>
     <bool name="isTablet">false</bool>
-    <!-- From: file:/C:/Users/Mike/Documents/metaio/Metaio%20SDK%206.0.1/_Android/metaioSDK/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/Mike/OneDrive/Exjobb/TruckAR/TruckAR/metaioSDK/res/values/colors.xml -->
     <eat-comment/>
     <color name="button_pressed_background">#33000000</color>
     <color name="listViewBackground">#FFECECEC</color>
@@ -17,7 +17,7 @@
     <color name="toastBorder">#EE777777</color>
     <color name="toastText">#FFF</color>
     <color name="transparent">#00000000</color>
-    <!-- From: file:/C:/Users/Mike/Documents/metaio/Metaio%20SDK%206.0.1/_Android/metaioSDK/res/values/ids.xml -->
+    <!-- From: file:/C:/Users/Mike/OneDrive/Exjobb/TruckAR/TruckAR/metaioSDK/res/values/ids.xml -->
     <eat-comment/>
     <item name="audioButton" type="id"/>
     <item name="callButton" type="id"/>
@@ -26,7 +26,7 @@
     <item name="imageButton" type="id"/>
     <item name="routeButton" type="id"/>
     <item name="videoButton" type="id"/>
-    <!-- From: file:/C:/Users/Mike/Documents/metaio/Metaio%20SDK%206.0.1/_Android/metaioSDK/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/Mike/OneDrive/Exjobb/TruckAR/TruckAR/metaioSDK/res/values/strings.xml -->
     <eat-comment/>
     <string name="BTN_ACCEPT">Accept</string>
     <string name="BTN_ADD">Add</string>
@@ -298,10 +298,10 @@
     <string name="MSG_TITLE_USERS_NOT_FOUND">No users found</string>
     <string name="MSG_TITLE_VALIDATION_ERROR">Validation error</string>
     <string name="MSG_TITLE_WARNING">Warning</string>
-    <!-- From: file:/C:/Users/Mike/Documents/metaio/Metaio%20SDK%206.0.1/_Android/metaioSDK/res/values/ids.xml -->
+    <!-- From: file:/C:/Users/Mike/OneDrive/Exjobb/TruckAR/TruckAR/metaioSDK/res/values/ids.xml -->
     <eat-comment/>
     <item name="metaioSDKSignature" type="string"/>
-    <!-- From: file:/C:/Users/Mike/Documents/metaio/Metaio%20SDK%206.0.1/_Android/metaioSDK/res/values/theme.xml -->
+    <!-- From: file:/C:/Users/Mike/OneDrive/Exjobb/TruckAR/TruckAR/metaioSDK/res/values/theme.xml -->
     <eat-comment/>
     <style name="POIButton" parent="android:style/Widget.Button">
         <item name="android:textSize">16sp</item>
