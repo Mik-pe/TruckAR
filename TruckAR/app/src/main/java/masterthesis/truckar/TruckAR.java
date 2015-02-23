@@ -70,13 +70,13 @@ public class TruckAR extends ARViewActivity
         {
 
             // Getting a file path for tracking configuration XML file
-            final File trackingConfigFile = AssetsManager.getAssetPathAsFile(getApplicationContext(), "TrackingData_MarkerlessFast.xml");
+            final File trackingConfigFile = AssetsManager.getAssetPathAsFile(getApplicationContext(), "trackingdata_extended_image_tracking.xml");
 
             // Assigning tracking configuration
             boolean result = metaioSDK.setTrackingConfiguration(trackingConfigFile);
             MetaioDebug.log("Tracking data loaded: " + result);
 
-            final float scale = 11.f;
+            final float scale = 11f;
             final Rotation rotation = new Rotation(new Vector3d((float)Math.PI/2, 0.0f, 0.0f));
 
             // Getting a file path for a 3D geometry
@@ -213,6 +213,11 @@ public class TruckAR extends ARViewActivity
             {
                 final TrackingValues v = trackingValues.get(i);
                 MetaioDebug.log("Tracking state for COS "+v.getCoordinateSystemID()+" is "+v.getState());
+                if (v.isTrackingState())
+                {
+                    mEarth.setCoordinateSystemID(v.getCoordinateSystemID());
+                    break;
+                }
             }
         }
 

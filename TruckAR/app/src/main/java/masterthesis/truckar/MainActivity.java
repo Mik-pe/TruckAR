@@ -20,7 +20,7 @@ public class MainActivity extends Activity
     /**
      * Task that will extract all the assets
      */
-    private AssetsExtracter mTask;
+    AssetsExtracter mTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)

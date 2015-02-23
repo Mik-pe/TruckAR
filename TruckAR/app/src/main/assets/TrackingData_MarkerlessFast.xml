@@ -172,7 +172,7 @@
 							tracker will stop predicting.
 							This parameter is for expert usage only. In general
 							it is advised to leave the value unchanged. -->
-					<KeepPoseForNumberOfFrames>2</KeepPoseForNumberOfFrames>
+					<KeepPoseForNumberOfFrames>1000</KeepPoseForNumberOfFrames>
 
 					<!--	If the tracking device is equipped with an inertial
 							sensor that can measure gravity, the sensor's
@@ -181,7 +181,7 @@
 							this tag must be set to "ReplaceZAxis".
 							This parameter is for expert usage only. In general
 							it is advised to leave the value unchanged. -->
-					<GravityAssistance></GravityAssistance>
+					<GravityAssistance>ReplaceZAxis</GravityAssistance>
 
 					<!--	Data (position) smoothing factor for double
 							exponential smoothing of translation. This value
@@ -228,7 +228,7 @@
 							default value is false.
 							This parameter is for expert usage only. In general
 							it is advised to leave the value unchanged. -->
-					<ContinueLostTrackingWithOrientationSensor>false</ContinueLostTrackingWithOrientationSensor>
+					<ContinueLostTrackingWithOrientationSensor>true</ContinueLostTrackingWithOrientationSensor>
 				</Parameters>
 			</Fuser>
 
