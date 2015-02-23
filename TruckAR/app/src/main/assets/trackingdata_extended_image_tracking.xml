@@ -1,0 +1,37 @@
+<TrackingData>
+    <Sensors>
+        <Sensor Type="SLAMSensorSource">
+            <SensorID>SLAM</SensorID>
+            <Parameters>
+                <Initialization type="Markerless2D"/>
+                <ReferenceImage WidthMM="188" HeightMM="200">earthTarget.jpg</ReferenceImage>
+                <SimilarityThreshold>0.7</SimilarityThreshold>
+                <MinNumberOfObservations>3</MinNumberOfObservations>
+            </Parameters>
+            <SensorCOS>
+                <SensorCosID>world</SensorCosID>
+                <Parameters>
+                    <MinTriangulationAngle>4</MinTriangulationAngle>
+                </Parameters>
+            </SensorCOS>
+        </Sensor>
+    </Sensors>
+    <Connections>
+        <COS>
+            <Name>COS0</Name>
+            <Fuser Type="SmoothingFuser">
+                <Parameters>
+                    <AlphaRotation>0.5</AlphaRotation>
+                    <AlphaTranslation>0.8</AlphaTranslation>
+                    <GammaRotation>0.5</GammaRotation>
+                    <GammaTranslation>0.8</GammaTranslation>
+                    <KeepPoseForNumberOfFrames>1</KeepPoseForNumberOfFrames>
+                </Parameters>
+            </Fuser>
+            <SensorSource>
+                <SensorID>SLAM</SensorID>
+                <SensorCosID>world</SensorCosID>
+            </SensorSource>
+        </COS>
+    </Connections>
+</TrackingData>
