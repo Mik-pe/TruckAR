@@ -4,7 +4,7 @@
             <SensorID>SLAM</SensorID>
             <Parameters>
                 <Initialization type="Markerless2D"/>
-                <ReferenceImage WidthMM="188" HeightMM="200">earthTarget.jpg</ReferenceImage>
+                <ReferenceImage WidthMM="70" HeightMM="70">earthTarget.jpg</ReferenceImage>
                 <SimilarityThreshold>0.7</SimilarityThreshold>
                 <MinNumberOfObservations>3</MinNumberOfObservations>
             </Parameters>
@@ -22,8 +22,6 @@
             <Fuser Type="SmoothingFuser">
                 <Parameters>
                     <AlphaRotation>0.5</AlphaRotation>
-                    <!--- Comment about nothing! -->
-
                     <AlphaTranslation>0.8</AlphaTranslation>
                     <GammaRotation>0.5</GammaRotation>
                     <GammaTranslation>0.8</GammaTranslation>

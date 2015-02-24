@@ -8,6 +8,7 @@ import android.util.Log;
 
 import com.metaio.sdk.ARViewActivity;
 import com.metaio.sdk.MetaioDebug;
+import com.metaio.sdk.jni.ECAMERA_TYPE;
 import com.metaio.sdk.jni.EVISUAL_SEARCH_STATE;
 import com.metaio.sdk.jni.IGeometry;
 import com.metaio.sdk.jni.IMetaioSDKCallback;
@@ -17,8 +18,13 @@ import com.metaio.sdk.jni.Rotation;
 import com.metaio.sdk.jni.TrackingValues;
 import com.metaio.sdk.jni.TrackingValuesVector;
 import com.metaio.sdk.jni.Vector3d;
+import com.metaio.sdk.jni.Vector4d;
 import com.metaio.sdk.jni.VisualSearchResponseVector;
+import com.metaio.tools.SystemInfo;
 import com.metaio.tools.io.AssetsManager;
+
+import jp.epson.moverio.bt200.DisplayControl;
+
 
 public class TruckAR extends ARViewActivity
 {
@@ -43,9 +49,40 @@ public class TruckAR extends ARViewActivity
         if (metaioSDK != null)
         {
             metaioSDK.registerVisualSearchCallback(mVisualSearchCallback);
+            File calibrationFile = AssetsManager.getAssetPathAsFile(this, "myCalibration.xml");
+            if ((calibrationFile == null ||
+                    !metaioSDK.setHandEyeCalibrationFromFile(calibrationFile))
+                    && !metaioSDK.setHandEyeCalibrationFromFile())
+            {
+                metaioSDK.setHandEyeCalibrationByDevice();
+            }
+
+            metaioSDK.setStereoRendering(true);
+            metaioSDK.setSeeThrough(true);
+            metaioSDK.setSeeThroughColor(0, 0, 0, 255);
+        }
+    }
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+
+        if (SystemInfo.isEPSONMoverio())
+        {
+            new DisplayControl(this).setMode(DisplayControl.DISPLAY_MODE_3D, false);
         }
     }
 
+    @Override
+    protected void onStop()
+    {
+        super.onStop();
+
+        if (SystemInfo.isEPSONMoverio())
+        {
+            new DisplayControl(this).setMode(DisplayControl.DISPLAY_MODE_2D, false);
+        }
+    }
     @Override
     protected void onDestroy()
     {
@@ -76,7 +113,7 @@ public class TruckAR extends ARViewActivity
             boolean result = metaioSDK.setTrackingConfiguration(trackingConfigFile);
             MetaioDebug.log("Tracking data loaded: " + result);
 
-            final float scale = 11f;
+            final float scale = 4f;
             final Rotation rotation = new Rotation(new Vector3d((float)Math.PI/2, 0.0f, 0.0f));
 
             // Getting a file path for a 3D geometry
