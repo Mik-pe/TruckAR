@@ -8,10 +8,12 @@ import android.util.Log;
 
 import com.metaio.sdk.ARViewActivity;
 import com.metaio.sdk.MetaioDebug;
+import com.metaio.sdk.SensorsComponentAndroid;
 import com.metaio.sdk.jni.ECAMERA_TYPE;
 import com.metaio.sdk.jni.EVISUAL_SEARCH_STATE;
 import com.metaio.sdk.jni.IGeometry;
 import com.metaio.sdk.jni.IMetaioSDKCallback;
+import com.metaio.sdk.jni.ISensorsComponent;
 import com.metaio.sdk.jni.IVisualSearchCallback;
 import com.metaio.sdk.jni.ImageStruct;
 import com.metaio.sdk.jni.Rotation;
@@ -107,13 +109,14 @@ public class TruckAR extends ARViewActivity
         {
 
             // Getting a file path for tracking configuration XML file
-            final File trackingConfigFile = AssetsManager.getAssetPathAsFile(getApplicationContext(), "trackingdata_extended_image_tracking.xml");
+            //final File trackingConfigFile = AssetsManager.getAssetPathAsFile(getApplicationContext(), "trackingdata_extended_image_tracking.xml");
+            final File trackingConfigFile = AssetsManager.getAssetPathAsFile(getApplicationContext(), "id_marker_tracking.xml");
 
             // Assigning tracking configuration
             boolean result = metaioSDK.setTrackingConfiguration(trackingConfigFile);
             MetaioDebug.log("Tracking data loaded: " + result);
 
-            final float scale = 4f;
+            final float scale = 18f;
             final Rotation rotation = new Rotation(new Vector3d((float)Math.PI/2, 0.0f, 0.0f));
 
             // Getting a file path for a 3D geometry
@@ -252,7 +255,7 @@ public class TruckAR extends ARViewActivity
                 MetaioDebug.log("Tracking state for COS "+v.getCoordinateSystemID()+" is "+v.getState());
                 if (v.isTrackingState())
                 {
-                    mEarth.setCoordinateSystemID(v.getCoordinateSystemID());
+                    //mEarth.setCoordinateSystemID(v.getCoordinateSystemID());
                     break;
                 }
             }

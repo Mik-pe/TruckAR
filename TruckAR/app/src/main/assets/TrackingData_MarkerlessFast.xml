@@ -114,7 +114,7 @@
 							image.
 							These parameters are not required and are intended
 							for expert use only. -->
-					<ReferenceImage>earthTarget.jpg</ReferenceImage>
+					<ReferenceImage WidthMM="70" HeightMM="70">earthTarget.jpg</ReferenceImage>
 					<!-- <ReferenceImage WidthMM="100" HeightMM="100">metaioman_target.png</ReferenceImage> -->
 
 					<!--	Another similarity threshold can be specified here.
@@ -181,7 +181,7 @@
 							this tag must be set to "ReplaceZAxis".
 							This parameter is for expert usage only. In general
 							it is advised to leave the value unchanged. -->
-					<GravityAssistance>ReplaceZAxis</GravityAssistance>
+					<GravityAssistance></GravityAssistance>
 
 					<!--	Data (position) smoothing factor for double
 							exponential smoothing of translation. This value
@@ -193,7 +193,7 @@
 							default value is 0.5.
 							This parameter is for expert usage only. In general
 							it is advised to leave the value unchanged. -->
-					<AlphaTranslation>1.0</AlphaTranslation>
+					<AlphaTranslation>0.8</AlphaTranslation>
 
 					<!--	Trend (velocity) smoothing factor for double
 							exponential smoothing of translation. This value
@@ -219,7 +219,7 @@
 							value to 0.5.
 							This parameter is for expert usage only. In general
 							it is advised to leave the value unchanged. -->
-					<GammaRotation>0.8</GammaRotation>
+					<GammaRotation>1.0</GammaRotation>
 
 					<!--	If an orientation sensor is available, the system
 							may try to keep updating the pose based on that

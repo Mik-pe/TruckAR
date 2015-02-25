@@ -1,0 +1,101 @@
+<!--
+    Example tracking configuration file for using marker-based tracking.
+        Marker tracking is the detection of markers in a camera image and
+        the estimation of the camera position with respect to these markers.
+        Markers, in contrast to natural features, are easy to detect with high
+        precision, which in turn allows to estimate the camera position with
+        high accuracy. 
+        There are three different marker types that can be used:
+        - ID marker,
+        - picture marker and
+        - rectangular image marker
+        To use one or more of these markers for the tracking process, they need
+        to be defined in the configuration file. If a marker is not defined, 
+        but is seen during the tracking process, then it will simply be ignored. 
+        Besides the configuration file, a camera calibration file needs to be 
+        provided. A more precise camera calibration will lead to more accurate 
+        tracking results, so it is advisible to use a high-quality camera 
+        calibration. 
+-->
+<TrackingData>
+    <Sensors>
+        <!--
+            Use "MarkerBasedSensorSource" as type to use marker tracking
+        -->
+        <Sensor Type="SLAMSensorSource">
+            <SensorID>SLAM</SensorID>
+            <!--TODO: Testa om detta ens fungerar... -->
+                <Parameters>
+                    <Initialization type="MarkerBasedSensorSource"/>
+                    <!--     Assign ID to uniquely identify this tracker  -->
+                    <SensorID>Markertracking1</SensorID>
+                    <Parameters>
+                        <MarkerTrackingParameters>
+                            <TrackingQuality>fast</TrackingQuality>
+                            <ThresholdOffset>110</ThresholdOffset>
+                        </MarkerTrackingParameters>
+                    </Parameters>
+                    <SensorCOS>
+                        <SensorCosID>Marker1</SensorCosID>
+                        <Parameters>
+                            <MarkerParameters>
+                                <Size>285</Size>
+                                <MatrixID>1</MatrixID>
+                            </MarkerParameters>
+                        </Parameters>
+                    </SensorCOS>
+                </Parameters>
+
+        </Sensor>
+    </Sensors>
+    <Connections>
+        <COS>
+            <Name>COS1</Name>
+            <Fuser Type="SmoothingFuser">
+                <Parameters>
+                    <KeepPoseForNumberOfFrames>1000</KeepPoseForNumberOfFrames>
+
+                    <AlphaTranslation>0.8</AlphaTranslation>
+
+                    <GammaTranslation>1.0</GammaTranslation>
+
+                    <AlphaRotation>0.8</AlphaRotation>
+
+                    <GammaRotation>1.0</GammaRotation>
+                    <ContinueLostTrackingWithOrientationSensor>true</ContinueLostTrackingWithOrientationSensor>
+                </Parameters>
+            </Fuser>
+
+            <SensorSource trigger="1">
+                <SensorID>Markertracking1</SensorID>
+                <SensorCosID>Marker1</SensorCosID>
+                <HandEyeCalibration>
+                    <TranslationOffset>
+                        <x>0</x>
+                        <y>0</y>
+                        <z>0</z>
+                    </TranslationOffset>
+                    <RotationOffset>
+                        <x>0</x>
+                        <y>0</y>
+                        <z>0</z>
+                        <w>1</w>
+                    </RotationOffset>
+                </HandEyeCalibration>
+                <COSOffset>
+                    <TranslationOffset>
+                        <x>0</x>
+                        <y>0</y>
+                        <z>0</z>
+                    </TranslationOffset>
+                    <RotationOffset>
+                        <x>0</x>
+                        <y>0</y>
+                        <z>0</z>
+                        <w>1</w>
+                    </RotationOffset>
+                </COSOffset>
+            </SensorSource>
+        </COS>
+    </Connections>
+</TrackingData>
